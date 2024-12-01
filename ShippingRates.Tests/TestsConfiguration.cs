@@ -19,6 +19,12 @@ namespace ShippingRates.Tests
         public string FedExHubId { get; set; }
         public bool FedExUseProduction { get; set; } = false;
 
+        public string FedExRestClientId { get; set; }
+        public string FedExRestSecret { get; set; }
+        public string FedExRestAccountNumber { get; set; }
+        public string FedExRestHubId { get; set; }
+        public bool FedExRestUseProduction { get; set; } = false;
+
         public string DHLSiteId { get; set; }
         public string DHLPassword { get; set; }
         public string DHLAccountNumber { get; set; }

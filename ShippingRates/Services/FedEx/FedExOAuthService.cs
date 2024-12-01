@@ -1,4 +1,5 @@
 ﻿using ShippingRates.ShippingProviders;
+using ShippingRates.ShippingProviders.FedExRest;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -13,7 +14,7 @@ namespace ShippingRates.Services.FedEx
         static string GetOAuthRequestUri(bool isProduction)
             => $"https://{(isProduction ? "apis" : "apis-sandbox")}.fedex.com/oauth/token";
 
-        public static async Task<string> GetTokenAsync(FedExProviderConfiguration configuration, HttpClient httpClient, Action<Error> reportError)
+        public static async Task<string> GetTokenAsync(FedExRestProviderConfiguration configuration, HttpClient httpClient, Action<Error> reportError)
         {
             var token = TokenCacheService.GetToken(configuration.ClientId);
             if (!string.IsNullOrEmpty(token))
